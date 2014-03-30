@@ -1,46 +1,71 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
-    <title>New SVG accessibility note - DRAFT</title>
-  </head>
-  <body>
-    <h1>SVG 2 accessibility</h1>
-    <p>This is a stub. The idea is to add to it until it turns into a document.
-      That will take a lot of pull requests.</p>
-    <p>Editor: chaals</p>
-    <h2>Things that are still true</h2>
-    <p>i.e. since the publication of SVG 1 and the poor <a href="http://www.w3.org/TR/2000/NOTE-SVG-access-20000807">old
-        SVG accessibility note</a></p>
-    <h3>basic shapes</h3>
-    <p>to the extent that these can be helpful in understanding geometry, they
-      are still there. Unfortunately there is a tendency in practice to use a
-      lot of paths instead</p>
-    <h3><a href="http://www.w3.org/TR/SVG-access/#Re-Using">Re-usable
-        "components"</a></h3>
-    <p>the <code>use</code> element gives SVG something like what Web Components
-      is still trying to bring to HTML a decade-odd later.</p>
-    <h3>title and description</h3>
-    <p>The way you can use these at appropriate levels of structure is a very
-      nice thing.</p>
-    <h3>DOM</h3>
-    <p>Everything now uses the DOM, so it's helpful to have one.</p>
-    <h3><a href="http://www.w3.org/TR/SVG-access/#Fonts">Fonts</a></h3>
-    <p>Now enhanced to match the new technology, fonts are a much nicer thing to
-      do than simply adding a lot of paths to convey some text.</p>
-    <h2>New improvements</h2>
-    <h3>tabindex</h3>
-    <p>Being able to build a keyboard navigation map around an SVG is a great
-      thing. Element-wise navigation is a fallback strategy for users who don't
-      have a choice, but it is unlikely to be a good one if the author has done
-      a half-way reasonable job.</p>
-    <h3>aria attributes</h3>
-    <h2>Just different</h2>
-    <h3>onclick is accessible now</h3>
-    <p>DOMActivate was dropped because it was unnecessary, and unhelpful. Lack
-      of browser support and lack of author usage fed a vicious circle.</p>
-    <p>But onclick can be triggered by almost any mode of interaction - which
-      was what DOMActivate tried to enable. So we have the functionality, even
-      if it has a name that seems limiting.</p>
-  </body>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+  <title>New SVG accessibility note - DRAFT</title>
+</head>
+
+<body>
+  <h1>SVG 2 accessibility</h1>
+
+  <p>This is a stub. The idea is to add to it until it turns into a document. That will take a lot of pull requests.</p>
+
+  <p>Editor: chaals</p>
+
+  <h2>Things that are still true</h2>
+
+  <p>i.e. since the publication of SVG 1 and the poor <a href="http://www.w3.org/TR/2000/NOTE-SVG-access-20000807">old SVG accessibility note</a></p>
+
+  <h3>basic shapes</h3>
+
+  <p>to the extent that these can be helpful in understanding geometry, they are still there. Unfortunately there is a tendency in practice to use a lot of paths instead</p>
+
+  <h3><a href="http://www.w3.org/TR/SVG-access/#Re-Using">Re-usable components"</a></h3>
+
+  <p>the <code>use</code> element gives SVG something like what Web Components is still trying to bring to HTML a decade-odd later.</p>
+
+  <h3><a href="https://svgwg.org/svg2-draft/struct.html#DescriptionAndTitleElements">title and description</a></h3>
+
+  <p>The way you can use these at appropriate levels of structure is a very nice thing.</p>
+
+  <p>The <code>&lt;title&gt;</code> element maps to the accessible name, and the <code>&lt;desc&gt;</code> element maps to the accessible description in the accessibility API.</p>
+
+  <p>We should mention the lang attribute for internationalisation/accessibility.</p>
+
+  <h3><a href="https://svgwg.org/svg2-draft/struct.html#DOMInterfaces">DOM</a></h3>
+
+  <p>Everything now uses the DOM, so it's helpful to have one.</p>
+
+  <h3><a href="http://www.w3.org/TR/SVG-access/#Fonts">Fonts</a></h3>
+
+  <p>Now enhanced to match the new technology, fonts are a much nicer thing to do than simply adding a lot of paths to convey some text.</p>
+
+  <h2>New improvements</h2>
+
+  <h3><a href="https://svgwg.org/svg2-draft/interact.html#Focus">tabindex</a></h3>
+
+  <p>Being able to build a keyboard navigation map around an SVG is a great thing. Element-wise navigation is a fallback strategy for users who don't have a choice, but it is unlikely to be a good one if the author has done a half-way reasonable job.</p>
+
+  <p>Describe tabindex attribute, plus outcome of using -integer, 0, or +integer values.</p>
+
+  <p>Should we mention other keyboard related things, like the <a href="https://svgwg.org/svg2-draft/interact.html#focusable">focusable</a> attribute?</p>
+
+  <h3><a href="https://svgwg.org/svg2-draft/struct.html#WAIARIAAttributes">ARIA attributes</a></h3>
+
+  <p>The ARIA role attribute (<a href="https://svgwg.org/svg2-draft/struct.html#roleattribute">5.10.1</a>), based on the <a href="http://www.w3.org/TR/wai-aria/roles#role_definitions">ARIA roles definitions</a>. ARIA properties and states (<a href="https://svgwg.org/svg2-draft/struct.html#ARIAStateandPropertyAttributes">5.10.2</a>), as defined in <a href="http://www.w3.org/TR/wai-aria/states_and_properties#state_prop_def">ARIA states and properties</a>. Plus implicit ARIA semantics (<a href="https://svgwg.org/svg2-draft/struct.html#implicit-aria-semantics">5.10.3</a>).</p>
+
+  <p>For example, can use <a href="http://www.w3.org/TR/wai-aria/roles#img">role="img"</a> on the <code>&lt;svg&gt;</code> element. The <a href="http://www.w3.org/TR/wai-aria/roles#presentation">role="presentation"</a> can also be used to remove child shape elements from the accessibility API. The <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-label">aria-label</a>and <a href=
+  "http://www.w3.org/TR/wai-aria/states_and_properties#aria-labelledby">aria-labelledby</a> attributes can be used to associate the <code>&lt;title&gt;</code> and <code>&lt;desc&gt;</code> elements. The <a href="www.w3.org/TR/wai-aria/states_and_properties#aria-label">aria-describedby</a> attribute can also be used, but has poor AT support in spite of reasonable  browser support.</p>
+
+  <p>Info on <a href="http://blog.paciellogroup.com/2013/12/using-aria-enhance-svg-accessibility/">basic ARIA SVG support</a>, plus simple <a href="https://dl.dropboxusercontent.com/u/2805347/web/test-cases-svg-aria.html">SVG ARIA test cases</a>.</p>
+
+  <h2>Just different</h2>
+
+  <h3>onclick is accessible now</h3>
+
+  <p>DOMActivate was dropped because it was unnecessary, and unhelpful. Lack of browser support and lack of author usage fed a vicious circle.</p>
+
+  <p>But onclick can be triggered by almost any mode of interaction - which was what DOMActivate tried to enable. So we have the functionality, even if it has a name that seems limiting.</p>
+</body>
 </html>
