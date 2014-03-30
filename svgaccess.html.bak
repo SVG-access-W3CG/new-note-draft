@@ -18,8 +18,8 @@
       lot of paths instead</p>
     <h3><a href="http://www.w3.org/TR/SVG-access/#Re-Using">Re-usable
         "components"</a></h3>
-    <p>the <code>use</code> element gives SVG something like what Web
-      Components is still trying to bring to HTML a decade-odd later.</p>
+    <p>the <code>use</code> element gives SVG something like what Web Components
+      is still trying to bring to HTML a decade-odd later.</p>
     <h3>title and description</h3>
     <p>The way you can use these at appropriate levels of structure is a very
       nice thing.</p>
