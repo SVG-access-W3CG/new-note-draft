@@ -43,11 +43,15 @@
   <p>The <code>&lt;title&gt;</code> element maps to the accessible name, and the <code>&lt;desc&gt;</code>
   element maps to the accessible description in the accessibility API.</p>
   
-  <h3><code>lang</code> attribute</h3>
+  <h3>The <a href="https://svgwg.org/svg2-draft/struct.html#XMLLangAttribute"><code>xml:lang</code> attribute</a></h3>
 
-  <p>We should mention the lang attribute for internationalisation/accessibility. This matches 
+  <p>xml:lang in text elements and desc/title can be used to  meet 
   <a href="http://www.w3.org/TR/WCAG20/#meaning">WCAG 2.0 requirement 3.1.1</a>.
   </p>
+  
+  <p>Allegedly it might be changed to lang, but that will mess with the 
+  <a href="https://svgwg.org/svg2-draft/fonts.html#GlyphElementLangAttribute">lang attribute in fonts</a> (how does that
+  work now in SVG embedded in HTML5 ?)</p>
   
   <p>Examples of using it in text, and in title/desc elements</p>
 
