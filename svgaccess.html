@@ -20,11 +20,13 @@
 
   <h3>basic shapes</h3>
 
-    <p>to the extent that these can be helpful in understanding geometry, they are still there. 
-    Unfortunately there is a tendency in practice to use a lot of paths instead. While paths
-    offer a great deal of flexibility, they're quite hard to interpret as real shapes. In most
-    cases this doesn't matter, but there are use cases for using plain shapes rather than paths,
-    to make things clearer to users.</p>
+<p>SVG has a set of <a href="http://www.w3.org/TR/SVG2/shapes.html">basic shape elements</a>. They can be used to create simple geometric figures like rectangles, circles, ellipses, lines and polygons. When these elements are used, information about the shape is encoded into the SVG image where it may be used by assistive technologies.</p>
+<p>*** Example: basic shapes.</p>
+<p>SVG <a href="http://www.w3.org/TR/SVG2/paths.html#TermEquivalentPath">paths</a> are used to create non-standard shapes (leaves or fish for example). Whilst paths make SVG very flexible, it is quite hard to translate the information encoded into the image into real shapes.</p>
+<p>*** Example: path.</p>
+<p>In most cases this doesn't matter, and the <a href="#titledesc">title and desc elements</a> can be used to provide appropriate information about the contents of non-standard SVG shapes. There are cases where using basic shapes will make things clearer to people consuming SVG images using assistive technologies though.</p>
+<p>*** Use cases?</p>
+
 
   <h3><a href="http://www.w3.org/TR/SVG-access/#Re-Using">Re-usable components"</a></h3>
 
@@ -33,7 +35,7 @@
     with a bit of relevant styling or other tweaking in turn supports the Web as a medium for annotating
     objects identified by a URL (such as <code>defs</code>) to support accessibility.</p>
 
-  <h3><a href="https://svgwg.org/svg2-draft/struct.html#DescriptionAndTitleElements">title and description</a></h3>
+  <h3 id="titleanddesc"><a href="https://svgwg.org/svg2-draft/struct.html#DescriptionAndTitleElements">title and description</a></h3>
 
     <p>The way you can use these at appropriate levels of structure is a very nice thing.</p> 
     <p>Because they are elements and not attributes you can do things like add <code>lang</code> attributes,
